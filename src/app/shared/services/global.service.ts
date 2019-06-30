@@ -6,9 +6,8 @@ declare var Utils;
 export class GlobalService {
   openCvutils = new Utils();
   constructor() {
-    this.openCvutils.loadOpenCv(this.loadOpenCvCallback);
   }
-  loadOpenCvCallback() {
-    console.log('opencv loaded');
+  loadOpenCv(callback) {
+    this.openCvutils.loadOpenCv(callback);
   }
 }

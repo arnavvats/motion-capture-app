@@ -8,5 +8,11 @@ import {GlobalService} from './shared/services/global.service';
 })
 export class AppComponent {
   title = 'motion-capture-app';
-  constructor(private globalService: GlobalService) {}
+  openCvLoaded = false;
+  constructor(private globalService: GlobalService) {
+    this.globalService.loadOpenCv(() => {
+      this.openCvLoaded = true;
+      console.log('opencv loaded');
+    });
+  }
 }

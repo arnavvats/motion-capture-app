@@ -1,0 +1,8 @@
+<canvas height=240 width=360 #gameCanvas></canvas>
+<div class="lower-band">
+  <div>Points: {{points}}</div>
+  <div >High Score: {{highScore}}</div>
+</div>
+
+<button (click)="this.state === 'play' ? stop() : play()"
+        [style.background-color]="this.state === 'play' ? 'red' : 'blue'">{{this.state === 'play' ? 'Stop': 'Play'}}</button>
